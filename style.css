@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+    --color-bg-start: #0b3d3a;
+    --color-bg-end: #145c52;
+    --color-card: #ffffff;
+    --color-card-border: #e4e0d6;
+    --color-ink: #133a35;
+    --color-ink-soft: #5b6f6b;
+    --color-gold: #c89b3c;
+    --color-gold-dark: #a87f2c;
+    --color-field-bg: #f6f4ee;
+    --color-field-border: #dcd6c6;
+    --color-success: #1f7a5c;
+
+    --radius-lg: 1.25rem;
+    --radius-md: 0.85rem;
+    --radius-sm: 0.6rem;
+
+    --shadow-card: 0 20px 50px -15px rgba(11, 61, 58, 0.45);
+    --shadow-field: inset 0 1px 2px rgba(19, 58, 53, 0.06);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    color: var(--color-ink);
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(200, 155, 60, 0.18), transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(200, 155, 60, 0.12), transparent 50%),
+        linear-gradient(160deg, var(--color-bg-start), var(--color-bg-end));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.25rem;
+}
+
+.box{
+    width: 100%;
+    max-width: 30rem;
+    background-color: var(--color-card);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 2.25rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+h1{
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--color-ink);
+}
+
+h1::after{
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3px;
+    margin: 0.65rem auto 0;
+    background: var(--color-gold);
+    border-radius: 999px;
+}
+
+/* ---------- conversion layout ---------- */
+
+.conversion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.from,
+.to{
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    min-width: 0;
+}
+
+.dropdown{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: var(--color-field-bg);
+    border: 1px solid var(--color-field-border);
+    border-radius: var(--radius-md);
+    padding: 0.5rem;
+}
+
+.flag{
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-card);
+    box-shadow: 0 0 0 1px var(--color-field-border);
+    background-color: var(--color-card);
+}
+
+.flag img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    background-color: transparent;
+}
+
+.option{
+    flex: 1;
+    min-width: 0;
+}
+
+#from-flag,
+#to-flag{
+    width: 100%;
+    height: 2.25rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    background-color: transparent;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-ink);
+    text-align: left;
+    padding: 0 0.25rem;
+    cursor: pointer;
+}
+
+#from-flag:focus,
+#to-flag:focus{
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+}
+
+#from-text,
+#to-text{
+    width: 100%;
+    height: 2.85rem;
+    border: 1px solid var(--color-field-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-field-bg);
+    box-shadow: var(--shadow-field);
+    text-align: center;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-ink);
+    padding: 0 0.5rem;
+}
+
+#from-text::placeholder,
+#to-text::placeholder{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+}
+
+#from-text:focus,
+#to-text:focus{
+    outline: none;
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.25);
+}
+
+#to-text{
+    background-color: #eef6f3;
+    color: var(--color-success);
+}
+
+.logo{
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.6rem;
+}
+
+.logo img{
+    width: 1.75rem;
+    height: 1.75rem;
+    margin: 0;
+    background-color: transparent;
+    opacity: 0.7;
+}
+
+/* ---------- comments / status line ---------- */
+
+.comments{
+    text-align: center;
+    min-height: 1.5rem;
+}
+
+#comments{
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-success);
+}
+
+/* ---------- submit button ---------- */
+
+#submit{
+    width: 100%;
+    height: 3.1rem;
+    border: none;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+    color: #fff;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -8px rgba(168, 127, 44, 0.55);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+#submit:hover{
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 24px -8px rgba(168, 127, 44, 0.6);
+}
+
+#submit:active{
+    transform: translateY(0);
+    box-shadow: 0 6px 14px -8px rgba(168, 127, 44, 0.5);
+}
+
+#submit:focus-visible{
+    outline: 2px solid var(--color-bg-start);
+    outline-offset: 3px;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 30rem){
+    .box{
+        padding: 1.75rem 1.25rem 1.5rem;
+        gap: 1.25rem;
+    }
+
+    h1{
+        font-size: 1.2rem;
+    }
+
+    .conversion{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .logo{
+        padding-top: 0;
+        transform: rotate(90deg);
+    }
+
+    #from-text,
+    #to-text{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 22rem){
+    .container{
+        padding: 1.25rem 0.75rem;
+    }
+
+    .box{
+        padding: 1.5rem 1rem 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    #submit{
+        transition: none;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="box">
+
+        <h1>CURRENCY CONVERTER</h1>
+
+        <div class="conversion">
+        <div class="from">
+            <div class="dropdown">
+                <div class="flag">
+                    <img src="https://flagsapi.com/US/shiny/64.png" alt="" id="flag-from-img">
+                </div>
+                <div class="option">
+             <select name="" id="from-flag">
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+             </select>
+            </div>
+            </div>
+            <div class="text">
+            <input type="text" id="from-text" placeholder="Enter amount">
+            </div>
+        </div>
+
+        <div class="logo">
+            <img src="two-arrows.png" alt="">
+        </div>
+
+        <div class="to">
+            <div class="dropdown">
+                 <div class="flag">
+                     <img src="https://flagsapi.com/IN/shiny/64.png" alt="" id="flag-to-img">
+                </div>
+                <div class="option">
+            <select name="" id="to-flag" >
+                <option value="INR">INR</option>
+                <option value="USD">USD</option>
+            </select>
+            </div>
+            </div>
+            <div class="text">
+            <input type="text" id="to-text" placeholder="Calculated amount">
+            </div>
+        </div>
+
+        </div>
+
+        <div class="comments">
+            <p id="comments"></p>
+        </div>
+
+        <button id="submit">Calculate Exchange Rates</button>
+
+        </div>
+
+    </div>
+      
+    <script type="module" src="app.js"></script>
+    <script type="module" src="countryCodes.js"></script>
+</body>
+</html>
+
