@@ -1,4 +1,4 @@
-    import countryList from "./countryCodes.js";
+ import countryList from "./countryCodes.js";
 
 let dropFrom = document.querySelector('#from-flag');
 let dropTo =  document.querySelector('#to-flag');
